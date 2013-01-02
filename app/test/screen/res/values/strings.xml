@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TestscreenActivity!</string>
+    <string name="app_name">Testscreen</string>
+    <string name="code">Code</string>
+    <string name="name">Name</string>
+    <string name="id">ID</string>
+    <string name="image">Image</string>
+
+</resources>

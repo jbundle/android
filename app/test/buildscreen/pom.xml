@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jbundle.android.app</groupId>
+    <artifactId>jbundle-android-app-test-reactor</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+    <artifactId>org.jbundle.android.app.test.buildscreen</artifactId>
+    
+    <packaging>apk</packaging>
+    <name>Testscreen - programmatic widgets</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <version>4.0.3_r3</version>
+            <scope>provided</scope>
+        </dependency>
+	
+	<dependency>
+          <groupId>org.jbundle.android.config.dep</groupId>
+          <artifactId>jbundle-android-config-dep-thin</artifactId>
+          <version>${project.version}</version>
+	  <type>pom</type>
+	</dependency>
+
+        <dependency>
+	  <groupId>org.jbundle.app.test</groupId>
+	  <artifactId>org.jbundle.thin.app.test</artifactId>
+	  <version>${jbundleVersionRange}</version>
+        </dependency>
+      </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <sourceDirectory>src</sourceDirectory>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <sdk>
+                        <!-- platform or api level (api level 14 = platform 4.0.3)-->
+                        <platform>14</platform>
+                    </sdk>
+                </configuration>
+            </plugin>
+                    <plugin>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>copy-dependencies</goal>
+                                    </goals>
+                                    <configuration>
+                                        <outputDirectory>libs</outputDirectory>
+                                        <excludeScope>provided</excludeScope>
+                                        <!-- excludeScope>system</excludeScope -->
+                                        <excludeArtifactIds>${project.artifactId},javaws,junit</excludeArtifactIds>
+                                        <excludeTypes>pom</excludeTypes>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                    </plugin>
+                </plugins>
+            </build>
+</project>

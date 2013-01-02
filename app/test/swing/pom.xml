@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <parent>
+    <groupId>org.jbundle.android.app</groupId>
+    <artifactId>jbundle-android-app-test-reactor</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>org.jbundle.android.app.test.swing</artifactId>
+
+  <name>Testscreen - swing client</name>
+  <packaging>bundle</packaging>
+  <properties>
+    <mainClass>${jbundlePackage}.TestApplet</mainClass>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>	<!-- Lets you run your app standalone by typing exec:java -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+          	<phase>run</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+            <mainClass>${mainClass}</mainClass>	<!-- These properties are declared in my parent pom (jbundle-util-webapp-webstart) -->
+        </configuration>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Main-Class>${mainClass}</Main-Class>	<!-- Standalone support -->
+            <Private-Package>images</Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <dependencies>
+	    <dependency>
+	      <groupId>org.jbundle.config.dep</groupId>
+	      <artifactId>jbundle-config-dep-thin-db</artifactId>
+	      <version>${jbundleVersionRange}</version>
+	      <type>pom</type>
+	    </dependency>
+	    
+
+	    <dependency>
+	      <groupId>org.jbundle.app.test</groupId>
+	      <artifactId>org.jbundle.app.test.db</artifactId>
+	      <version>${jbundleVersionRange}</version>
+	    </dependency>
+	    <dependency>
+          <groupId>org.jbundle.base</groupId>
+          <artifactId>org.jbundle.base</artifactId>         
+          <version>${jbundleVersionRange}</version>
+	    </dependency>
+        <dependency>
+          <groupId>org.jbundle.base.db</groupId>
+          <artifactId>org.jbundle.base.db.client</artifactId>         
+          <version>${jbundleVersionRange}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.jbundle.base.db</groupId>
+          <artifactId>org.jbundle.base.db.net</artifactId>         
+          <version>${jbundleVersionRange}</version>
+        </dependency>	    
+        <dependency>
+          <groupId>org.jbundle.base.db</groupId>
+          <artifactId>org.jbundle.base.db.memory</artifactId>         
+          <version>${jbundleVersionRange}</version>
+        </dependency>	    
+	    
+        <dependency>
+          <groupId>org.jbundle.app.test</groupId>
+          <artifactId>org.jbundle.thin.app.test</artifactId>
+          <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+          <groupId>org.jbundle.app.test</groupId>
+          <artifactId>org.jbundle.model.app.test</artifactId>
+          <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+		  <groupId>org.jbundle.thin.base.db</groupId>
+		  <artifactId>org.jbundle.thin.base.db</artifactId>
+		  <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+		  <groupId>org.jbundle.thin.base</groupId>
+		  <artifactId>org.jbundle.thin.base.remote</artifactId>
+		  <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+		  <groupId>org.jbundle.thin.base.db</groupId>
+		  <artifactId>org.jbundle.thin.base.db.misc</artifactId>
+		  <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+		  <groupId>org.jbundle.thin.base</groupId>
+		  <artifactId>org.jbundle.thin.base.util</artifactId>
+		  <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+		  <groupId>org.jbundle.thin.base</groupId>
+		  <artifactId>org.jbundle.thin.base.util.base64</artifactId>
+		  <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+		  <groupId>org.jbundle.thin.base</groupId>
+		  <artifactId>org.jbundle.thin.base.thread</artifactId>
+		  <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+		  <groupId>org.jbundle.thin.base</groupId>
+		  <artifactId>org.jbundle.thin.base.message</artifactId>
+		  <version>0.8.0-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.jbundle.res</groupId>
+          <version>0.8.0-SNAPSHOT</version>
+          <artifactId>org.jbundle.res</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.jbundle.base.message</groupId>
+          <version>0.8.0-SNAPSHOT</version>
+          <artifactId>org.jbundle.base.message.core</artifactId>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.jbundle.base</groupId>
+          <version>0.8.0-SNAPSHOT</version>
+          <artifactId>org.jbundle.base.model</artifactId>
+        </dependency>
+   </dependencies>
+
+</project>

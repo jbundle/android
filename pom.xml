@@ -9,16 +9,18 @@
     <relativePath>../../jbundle-parent</relativePath>
   </parent>
   
-    <groupId>org.jbundle.base.screen</groupId>
-    <artifactId>jbundle-view-swing-reactor</artifactId>
+    <groupId>org.jbundle.android.config</groupId>
+    <artifactId>jbundle-view-android-reactor</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
-    <name>jbundle-view-swing-reactor</name>
+    <name>jbundle-view-android-reactor</name>
   
   <modules>
     <module>view</module>
-    <module>control</module>
+    <module>config</module>
+    <module>app</module>
+    <module>thin/base/screen</module>
   </modules>
 
   <repositories>
