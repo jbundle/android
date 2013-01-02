@@ -1,7 +1,7 @@
 /*
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.view.swing.calendar;
+package org.jbundle.base.screen.view.android.calendar;
 
 import java.util.Date;
 import java.util.EventListener;
@@ -11,7 +11,7 @@ import javax.swing.event.EventListenerList;
 
 import org.jbundle.base.screen.model.BaseScreen;
 import org.jbundle.base.screen.model.CalendarScreen;
-import org.jbundle.base.screen.view.swing.grid.GridTableModel;
+import org.jbundle.base.screen.view.android.grid.GridTableModel;
 import org.jbundle.thin.base.db.Constants;
 import org.jbundle.thin.base.db.FieldList;
 import org.jbundle.util.calendarpanel.event.MyListSelectionEvent;

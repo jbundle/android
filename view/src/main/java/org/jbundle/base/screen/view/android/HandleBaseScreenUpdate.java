@@ -9,7 +9,7 @@
 
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.view.swing;
+package org.jbundle.base.screen.view.android;
 
 import org.jbundle.base.db.Record;
 import org.jbundle.base.message.record.RecordMessageHeader;

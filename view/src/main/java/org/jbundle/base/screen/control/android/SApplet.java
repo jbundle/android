@@ -1,7 +1,7 @@
 /*
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.control.swing;
+package org.jbundle.base.screen.control.android;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
@@ -15,12 +15,12 @@ import org.jbundle.base.model.DBConstants;
 import org.jbundle.base.model.DBParams;
 import org.jbundle.base.model.ScreenConstants;
 import org.jbundle.base.model.Utility;
-import org.jbundle.base.screen.control.swing.util.ScreenInfo;
+import org.jbundle.base.screen.control.android.util.ScreenInfo;
 import org.jbundle.base.screen.model.AppletScreen;
 import org.jbundle.base.screen.model.BasePanel;
 import org.jbundle.base.screen.model.BaseScreen;
 import org.jbundle.base.screen.model.FrameScreen;
-import org.jbundle.base.screen.view.swing.VAppletScreen;
+import org.jbundle.base.screen.view.android.AAppletScreen;
 import org.jbundle.base.util.BaseApplication;
 import org.jbundle.base.util.Environment;
 import org.jbundle.base.util.MainApplication;
@@ -137,7 +137,7 @@ public class SApplet extends BaseApplet
         if (m_screenField == null)
             return;
         // Now that the physical screen is set up, make sure the screeninfo has access to the screen default properties
-        ScreenInfo screenInfo = ((VAppletScreen)m_screenField.getScreenFieldView()).getScreenInfo();
+        ScreenInfo screenInfo = ((AAppletScreen)m_screenField.getScreenFieldView()).getScreenInfo();
         if (propertyOwner == null)
             propertyOwner = m_screenField.retrieveUserProperties(Params.SCREEN);
         screenInfo.setScreenProperties(propertyOwner, null);
@@ -150,7 +150,7 @@ public class SApplet extends BaseApplet
      */
     public void setScreenProperties(PropertyOwner propertyOwner, Map<String,Object> properties)
     {
-        VAppletScreen vAppletScreen = (VAppletScreen)this.getScreenField().getScreenFieldView();
+        AAppletScreen vAppletScreen = (AAppletScreen)this.getScreenField().getScreenFieldView();
         vAppletScreen.setScreenProperties(propertyOwner, properties);
     }
     /**

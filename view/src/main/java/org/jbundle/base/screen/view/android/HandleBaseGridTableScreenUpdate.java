@@ -9,7 +9,7 @@
 
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.view.swing;
+package org.jbundle.base.screen.view.android;
 
 import org.jbundle.base.db.GridTable;
 import org.jbundle.base.db.Record;
@@ -21,7 +21,7 @@ import org.jbundle.base.model.ScreenFieldView;
 import org.jbundle.base.screen.model.BaseGridTableScreen;
 import org.jbundle.base.screen.model.ScreenField;
 import org.jbundle.base.screen.model.ToolScreen;
-import org.jbundle.base.screen.view.swing.grid.GridTableModel;
+import org.jbundle.base.screen.view.android.grid.GridTableModel;
 import org.jbundle.model.DBException;
 import org.jbundle.model.db.Convert;
 import org.jbundle.model.screen.ComponentParent;
@@ -63,7 +63,7 @@ class HandleBaseGridTableScreenUpdate extends HandleBaseScreenUpdate
      */
     public GridTableModel getGridTableModel()
     {
-        return ((VBaseGridTableScreen)this.getScreenFieldView()).getModel();
+        return ((ABaseGridTableScreen)this.getScreenFieldView()).getModel();
     }
     /**
      * Handle the update record message.
@@ -169,7 +169,7 @@ class HandleBaseGridTableScreenUpdate extends HandleBaseScreenUpdate
                 }   // Never
                 this.getGridTableModel().makeRowCurrent(iIndex, false);  // re-read the current record
             }
-            ((VBaseGridTableScreen)this.getScreenFieldView()).fireTableRowsUpdated(iIndex, iIndex);
+            ((ABaseGridTableScreen)this.getScreenFieldView()).fireTableRowsUpdated(iIndex, iIndex);
         }
     }
     /**
@@ -184,7 +184,7 @@ class HandleBaseGridTableScreenUpdate extends HandleBaseScreenUpdate
         Record recordToUpdate = (Record)message.get(RecordMessageHeader.RECORD_TO_UPDATE);
         Boolean boolUpdate = (Boolean)message.get(RecordMessageHeader.UPDATE_ON_SELECT);
         int iIndex = this.getRecordColumn(recordToUpdate);
-        int iSelection = ((VBaseGridTableScreen)this.getScreenFieldView()).getSelectedRow();   // Row to change
+        int iSelection = ((ABaseGridTableScreen)this.getScreenFieldView()).getSelectedRow();   // Row to change
         int iHandleType = DBConstants.BOOKMARK_HANDLE;  // OBJECT_ID_HANDLE;
         Object bookmark = ((RecordMessageHeader)message.getMessageHeader()).getBookmark(iHandleType);
 
@@ -202,7 +202,7 @@ class HandleBaseGridTableScreenUpdate extends HandleBaseScreenUpdate
                     // 2. Update the bookmark at this position
                     this.getGridTableModel().setValueAt(bookmark, iSelection, iIndex);
                     // 3. Refresh the grid to display to new value
-                    ((VBaseGridTableScreen)this.getScreenFieldView()).tableChanged(iSelection);    // Refresh
+                    ((ABaseGridTableScreen)this.getScreenFieldView()).tableChanged(iSelection);    // Refresh
 //                      ((JTable)getControl()).tableChanged(new TableModelEvent(m_gridTableModel, iSelection));    // Refresh
                     bSuccess = true;
                 }

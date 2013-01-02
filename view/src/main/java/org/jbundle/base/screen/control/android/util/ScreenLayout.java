@@ -1,7 +1,7 @@
 /*
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.control.swing.util;
+package org.jbundle.base.screen.control.android.util;
 
 /**
  * @(#)ScreenLayout.java    0.00 12-Feb-97 Don Corley
@@ -26,8 +26,8 @@ import org.jbundle.base.screen.model.BaseScreen;
 import org.jbundle.base.screen.model.ScreenField;
 import org.jbundle.base.screen.model.ToolScreen;
 import org.jbundle.base.screen.model.util.ScreenLocation;
-import org.jbundle.base.screen.view.swing.VBasePanel;
-import org.jbundle.base.screen.view.swing.VScreenField;
+import org.jbundle.base.screen.view.android.ABasePanel;
+import org.jbundle.base.screen.view.android.AScreenField;
 
 
 /**
@@ -36,7 +36,7 @@ import org.jbundle.base.screen.view.swing.VScreenField;
 public class ScreenLayout extends Object
     implements LayoutManager2
 {
-    protected VBasePanel m_screen = null;
+    protected ABasePanel m_screen = null;
     protected Rectangle m_rectAnchor = null;        // Used to add a field to the current screen
     protected Rectangle m_rectLastField = null;
     protected ScreenInfo m_screenInfo = null;
@@ -54,7 +54,7 @@ public class ScreenLayout extends Object
      * Constructor.
      * @param screen The screen to layout.
      */
-    public ScreenLayout(VBasePanel screen)
+    public ScreenLayout(ABasePanel screen)
     {
         this();
         this.init(screen);
@@ -63,7 +63,7 @@ public class ScreenLayout extends Object
      * Initialize the variables.
      * @param screen The screen to layout.
      */
-    public void init(VBasePanel screen)
+    public void init(ABasePanel screen)
     {
         m_screen = screen;
         screen.setScreenLayout(this);   // Link it back to me
@@ -79,7 +79,7 @@ public class ScreenLayout extends Object
      * Free this object.
      * @param screen The screen to free.
      */
-    public void free(VBasePanel screen)
+    public void free(ABasePanel screen)
     {
         if (m_screen != null) if (m_screen != screen)
             m_screen.setScreenLayout(null);     // Link it back to me
@@ -142,7 +142,7 @@ public class ScreenLayout extends Object
                 strFieldDesc = sField.getConverter().getFieldDesc();
             Point ptLocation = this.calcLocation(sField.getScreenLocation(), strFieldDesc);
 
-            Rectangle r = ((VScreenField)sField.getScreenFieldView()).calcBoxShape(ptLocation);
+            Rectangle r = ((AScreenField)sField.getScreenFieldView()).calcBoxShape(ptLocation);
             rect.setBounds(r);      // I do this, because r is a reference and I don't want to change it.
             if (sField.getScreenLocation().getAnchorConstant() == ScreenConstants.FILL_REMAINDER)
             {
@@ -150,7 +150,7 @@ public class ScreenLayout extends Object
                 rect.width = Math.min(rect.width, 100);   // If this screen fills the remainder, min height = 100 pixels
             }
             this.surveyBox(rect, sField.getScreenLocation());
-            ((VScreenField)sField.getScreenFieldView()).setControlExtent(r);
+            ((AScreenField)sField.getScreenFieldView()).setControlExtent(r);
 
             Component c = (Component)sField.getScreenFieldView().getControl(DBConstants.CONTROL_TOP);
             if (c != null)

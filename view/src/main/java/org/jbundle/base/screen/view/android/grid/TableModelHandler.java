@@ -1,7 +1,7 @@
 /*
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.view.swing.grid;
+package org.jbundle.base.screen.view.android.grid;
 
 /**
  * @(#)TableModelHandler.java 0.00 12-Feb-97 Don Corley

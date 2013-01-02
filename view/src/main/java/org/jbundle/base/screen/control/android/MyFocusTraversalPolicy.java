@@ -1,7 +1,7 @@
 /*
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.control.swing;
+package org.jbundle.base.screen.control.android;
 
 /**
  * @(#)AppletScreen.java    0.00 12-Feb-97 Don Corley
@@ -17,7 +17,7 @@ import javax.swing.LayoutFocusTraversalPolicy;
 
 import org.jbundle.base.model.DBConstants;
 import org.jbundle.base.screen.model.ScreenField;
-import org.jbundle.base.screen.view.swing.VScreenField;
+import org.jbundle.base.screen.view.android.AScreenField;
 
 
 /**
@@ -36,7 +36,7 @@ public class MyFocusTraversalPolicy extends LayoutFocusTraversalPolicy
      */
     public Component getComponentAfter(Container focusCycleRoot, Component aComponent)
     {
-        ScreenField sField = VScreenField.getComponentModel(aComponent);
+        ScreenField sField = AScreenField.getComponentModel(aComponent);
         Component component = this.getComponentAfter(sField, DBConstants.SELECT_NEXT_FIELD);
         if (component != null)
         {
@@ -53,7 +53,7 @@ public class MyFocusTraversalPolicy extends LayoutFocusTraversalPolicy
      */
     public Component getComponentBefore(Container focusCycleRoot, Component aComponent)
     {
-        ScreenField sField = VScreenField.getComponentModel(aComponent);
+        ScreenField sField = AScreenField.getComponentModel(aComponent);
         Component component = this.getComponentAfter(sField, DBConstants.SELECT_PREV_FIELD);
         if (component != null)
         {

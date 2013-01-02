@@ -1,7 +1,7 @@
 /*
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.control.swing.util;
+package org.jbundle.base.screen.control.android.util;
 
 /**
  * @(#)ScreenInfo.java  0.00 12-Feb-97 Don Corley
@@ -20,7 +20,7 @@ import javax.swing.UIManager;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 
 import org.jbundle.base.model.ScreenConstants;
-import org.jbundle.base.screen.control.swing.SApplet;
+import org.jbundle.base.screen.control.android.SApplet;
 import org.jbundle.base.screen.model.BasePanel;
 import org.jbundle.model.PropertyOwner;
 import org.jbundle.thin.base.screen.BaseApplet;

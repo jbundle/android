@@ -1,7 +1,7 @@
 /*
  * Copyright © 2012 jbundle.org. All rights reserved.
  */
-package org.jbundle.base.screen.view.swing.grid;
+package org.jbundle.base.screen.view.android.grid;
 
 import java.io.FileFilter;
 
@@ -17,7 +17,7 @@ import org.jbundle.base.screen.model.GridScreen;
 import org.jbundle.base.screen.model.SButtonBox;
 import org.jbundle.base.screen.model.ScreenField;
 import org.jbundle.base.screen.model.ToolScreen;
-import org.jbundle.base.screen.view.swing.VScreenField;
+import org.jbundle.base.screen.view.android.AScreenField;
 import org.jbundle.model.DBException;
 import org.jbundle.model.db.Convert;
 import org.jbundle.thin.base.db.Converter;
@@ -160,7 +160,7 @@ public class GridTableModel extends ThinTableModel
         boolean bIsEditable = super.isCellEditable(iRowIndex, iColumnIndex);
         if (!bIsEditable)
             return bIsEditable;     // Deleted record
-        return ((VScreenField)((ScreenField)m_gridScreen.getSField(iColumnIndex)).getScreenFieldView()).isCellEditable(null);    // From Editor interface
+        return ((AScreenField)((ScreenField)m_gridScreen.getSField(iColumnIndex)).getScreenFieldView()).isCellEditable(null);    // From Editor interface
     }
     /**
      * Add one extra blank record for appending?
