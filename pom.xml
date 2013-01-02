@@ -17,8 +17,9 @@
     <name>jbundle-view-swing-reactor</name>
   
   <modules>
-      <module>swing</module>
-    </modules>
+    <module>swing</module>
+    <module>control</module>
+  </modules>
 
   <repositories>
     <repository>
