@@ -468,10 +468,10 @@ public abstract class VScreenField extends ScreenFieldViewAdapter
                 if (iIndex != -1)
                     strCommand = strCommand.substring(0, iIndex);
             }
-            int bUseSameWindow = ScreenConstants.USE_SAME_WINDOW | DBConstants.PUSH_TO_BROSWER;
+            int bUseSameWindow = ScreenConstants.USE_SAME_WINDOW | DBConstants.PUSH_TO_BROWSER;
             if ((evt != null)
                 && ((evt.getModifiers() & ActionEvent.SHIFT_MASK) != 0))
-                    bUseSameWindow = ScreenConstants.USE_NEW_WINDOW | ScreenConstants.DONT_PUSH_TO_BROSWER;
+                    bUseSameWindow = ScreenConstants.USE_NEW_WINDOW | ScreenConstants.DONT_PUSH_TO_BROWSER;
             if (strCommand != null)
                 this.getScreenField().handleCommand(strCommand, this.getScreenField(), bUseSameWindow);
             int iErrorCode = DBConstants.NORMAL_RETURN;

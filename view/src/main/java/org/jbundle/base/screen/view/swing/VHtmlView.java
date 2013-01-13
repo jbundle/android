@@ -229,7 +229,7 @@ public class VHtmlView extends VTEView
                         if (m_actionTarget == null)
                             linkActivated(e.getURL());
                         else
-                            m_actionTarget.handleCommand(e.getDescription(), null, ScreenConstants.USE_SAME_WINDOW | DBConstants.PUSH_TO_BROSWER);
+                            m_actionTarget.handleCommand(e.getDescription(), null, ScreenConstants.USE_SAME_WINDOW | DBConstants.PUSH_TO_BROWSER);
                     }
                 }
             }
