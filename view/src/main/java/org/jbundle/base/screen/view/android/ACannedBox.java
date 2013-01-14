@@ -107,7 +107,7 @@ public class ACannedBox extends AButtonBox
         String strCommand = ((SCannedBox)this.getScreenField()).getButtonCommand();
         if (!(this.getScreenField().getParentScreen() instanceof GridScreen))
         {   // For all except a grid screen (grid screen will cause an endless echo because it would be in getColumnValue())
-            boolean bProcessed = this.getScreenField().handleCommand(strCommand, this.getScreenField(), ScreenConstants.USE_SAME_WINDOW | DBConstants.PUSH_TO_BROSWER);
+            boolean bProcessed = this.getScreenField().handleCommand(strCommand, this.getScreenField(), ScreenConstants.USE_SAME_WINDOW | DBConstants.PUSH_TO_BROWSER);
             if (bProcessed)
                 iErrorCode = DBConstants.NORMAL_RETURN;
         }

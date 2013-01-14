@@ -178,7 +178,7 @@ public class ACalendarScreen extends ABaseGridTableScreen
         {
             String strCommand = MenuConstants.FORMLINK;
             ScreenField sourceSField = this.getScreenField();
-            int bUseSameWindow = ScreenConstants.USE_SAME_WINDOW | DBConstants.PUSH_TO_BROSWER;  // Should check for shift
+            int bUseSameWindow = ScreenConstants.USE_SAME_WINDOW | DBConstants.PUSH_TO_BROWSER;  // Should check for shift
             this.getScreenField().handleCommand(strCommand, sourceSField, bUseSameWindow);
         }
     }

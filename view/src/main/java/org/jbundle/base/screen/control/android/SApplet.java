@@ -127,7 +127,7 @@ public class SApplet extends BaseApplet
             }
         }
         
-        BaseScreen.makeScreenFromParams(this, null, m_screenField, ScreenConstants.DONT_PUSH_TO_BROSWER, null);
+        BaseScreen.makeScreenFromParams(this, null, m_screenField, ScreenConstants.DONT_PUSH_TO_BROWSER, null);
     }
     /**
      *
@@ -280,7 +280,7 @@ public class SApplet extends BaseApplet
     /**
      * Add any applet sub-panel(s) now.
      */
-    public boolean addSubPanels(Container parent)
+    public boolean addSubPanels(Container parent, int options)
     {
         parent.setLayout(new BoxLayout(parent, BoxLayout.Y_AXIS));
         m_paneBottom = parent;
@@ -412,7 +412,7 @@ public class SApplet extends BaseApplet
 			javaCommand = command;
 		if ((javaCommand == null) || (javaCommand.length() == 0))
 			javaCommand = this.getInitialCommand(false);
-		screen.handleCommand(this.cleanCommand(javaCommand), screen, ScreenConstants.DONT_PUSH_TO_BROSWER | ScreenConstants.USE_SAME_WINDOW);
+		screen.handleCommand(this.cleanCommand(javaCommand), screen, ScreenConstants.DONT_PUSH_TO_BROWSER | ScreenConstants.USE_SAME_WINDOW);
 	}
 	/**
 	 * Get the original screen params.
@@ -450,7 +450,7 @@ public class SApplet extends BaseApplet
 				command = command.substring(1);
 		BasePanel screen = this.getScreenField();
 		Utility.getLogger().info("Browser forward: browser command=" + command);
-		screen.handleCommand(this.cleanCommand(command), screen, ScreenConstants.DONT_PUSH_TO_BROSWER | ScreenConstants.USE_SAME_WINDOW);
+		screen.handleCommand(this.cleanCommand(command), screen, ScreenConstants.DONT_PUSH_TO_BROWSER | ScreenConstants.USE_SAME_WINDOW);
 	}
     /**
      * The browser hash value changed (Javascript called me).
@@ -463,7 +463,7 @@ public class SApplet extends BaseApplet
 				command = command.substring(1);
 		BasePanel screen = this.getScreenField();
 		Utility.getLogger().info("Browser hash change: java browser command=" + command);
-		screen.handleCommand(this.cleanCommand(command), screen, ScreenConstants.DONT_PUSH_TO_BROSWER | ScreenConstants.USE_SAME_WINDOW);
+		screen.handleCommand(this.cleanCommand(command), screen, ScreenConstants.DONT_PUSH_TO_BROWSER | ScreenConstants.USE_SAME_WINDOW);
 	}
     /**
      * Do some applet-wide action.

@@ -389,9 +389,9 @@ public class ScreenLayout extends Object
                 default:
                     nextPosition = new Point(m_rectAnchor.x, m_rectAnchor.y);
                     if (((m_rectAnchor.x == m_rectLastField.x) && (m_rectAnchor.y == m_rectLastField.y)) && (m_rectLastField.height > 0))
-                        nextPosition.y += m_rectLastField.height + ScreenInfo.EXTRA_INTER_ROW_SPACING - ScreenInfo.EXTRA_BOX_SPACING;  // Bottom of last char + gap between lines
+                        nextPosition.y += m_rectLastField.height + ScreenInfo.EXTRA_INTER_ROW_SPACING - ScreenInfo.EXTRA_BOX_HEIGHT;  // Bottom of last char + gap between lines
                     else if (m_rectAnchor.height > 0)
-                        nextPosition.y += m_rectAnchor.height + ScreenInfo.EXTRA_INTER_ROW_SPACING - ScreenInfo.EXTRA_BOX_SPACING;  // Bottom of last char + gap between lines
+                        nextPosition.y += m_rectAnchor.height + ScreenInfo.EXTRA_INTER_ROW_SPACING - ScreenInfo.EXTRA_BOX_HEIGHT;  // Bottom of last char + gap between lines
                     else
                         nextPosition.y += m_screenInfo.getRowHeight((BasePanel)m_screen.getScreenField());  // Bottom of last char + gap between lines
                     if (setNewAnchor == ScreenConstants.ANCHOR_DEFAULT)

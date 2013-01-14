@@ -230,10 +230,10 @@ public class AImageView extends AScreenField
     public void onMouseClicked(MouseEvent evt)
     {
         /*int iErrorCode = */this.validateCurrentFocus();   // 1.4 HACK
-        int bUseSameWindow = ScreenConstants.USE_SAME_WINDOW | ScreenConstants.PUSH_TO_BROSWER;
+        int bUseSameWindow = ScreenConstants.USE_SAME_WINDOW | ScreenConstants.PUSH_TO_BROWSER;
         if ((evt != null)
             && ((evt.getModifiers() & ActionEvent.SHIFT_MASK) != 0))
-                bUseSameWindow = ScreenConstants.USE_NEW_WINDOW | ScreenConstants.DONT_PUSH_TO_BROSWER;
+                bUseSameWindow = ScreenConstants.USE_NEW_WINDOW | ScreenConstants.DONT_PUSH_TO_BROWSER;
         String strCommand = ((SImageView)this.getScreenField()).getButtonCommand();
         if ((this.getControl() != null) && (strCommand != null))
             this.getScreenField().handleCommand(strCommand, this.getScreenField(), bUseSameWindow);   // Execute this specific command
