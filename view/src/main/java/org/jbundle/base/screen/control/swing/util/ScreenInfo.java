@@ -34,16 +34,16 @@ import org.jbundle.thin.base.screen.landf.theme.CustomTheme;
 public class ScreenInfo extends Object
 {
     public static final int FIRST_ROW_OFFSET = 4;    // start 5 pixels down on displays
-    public static final int EXTRA_BOX_SPACING = 5; // Extra pixels needed for a box (Vertical)
+    public static final int EXTRA_BOX_HEIGHT = 5; // Extra pixels needed for a box (Vertical)
     public static final int EXTRA_ROW_SPACING = 2;
     public static final int HORIZONTAL_EXTRA_CHARS = 2;  // Extra chars in horizontal position
-    public static final int FIELD_VERT_OFFSET = EXTRA_BOX_SPACING / 2; // Offset for a description
-    public static final int EXTRA_INTER_ROW_SPACING = EXTRA_BOX_SPACING + EXTRA_ROW_SPACING;    // Extra pixels needed per row
+    public static final int FIELD_VERT_OFFSET = EXTRA_BOX_HEIGHT / 2; // Offset for a description
+    public static final int EXTRA_INTER_ROW_SPACING = EXTRA_BOX_HEIGHT + EXTRA_ROW_SPACING;    // Extra pixels needed per row
     public static final int INIT_GRID_ROW_INSET = 4;
     public static final int BUMP_ROW_HEIGHT_LIMIT = 15; // Bump the row height by one if the height is less than this
     public static final int FIRST_COL_OFFSET = 4;    // start 5 pixels down on displays
-    public static final int FIELD_HORIZ_OFFSET = 1;  // Extra pixels needed in each character cell
-    public static final int EXTRA_COL_BOX_SPACING = FIELD_HORIZ_OFFSET * 2 + 3;    // Extra pixels needed for a box
+    public static final int FIELD_HORIZ_OFFSET = 2;  // Extra pixels needed in each character cell
+    public static final int EXTRA_COL_BOX_SPACING = FIELD_HORIZ_OFFSET * 2 + 4;    // Extra pixels needed for a box
     public static final int EXTRA_COL_SPACING = EXTRA_COL_BOX_SPACING * 3;         // Extra space added to buttons and popups
     public static final int CELL_BORDER_WIDTH = 2;
     public static final int SHIFT_TEXT_DOWN = +1;
@@ -199,7 +199,7 @@ public class ScreenInfo extends Object
         if (rowHeight < BUMP_ROW_HEIGHT_LIMIT)
             rowHeight++;
         if (((pBasePanel.getScreenType() & ScreenConstants.INPUT_TYPE) != 0) || (pBasePanel.getEditing() == true))
-            rowHeight += EXTRA_BOX_SPACING;
+            rowHeight += EXTRA_BOX_HEIGHT;
         return rowHeight;
     }
     /**
@@ -214,7 +214,7 @@ public class ScreenInfo extends Object
     }
     public static final String m_strAlpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     /**
-     * Get the avaerage character width of this font.
+     * Get the average character width of this font.
      */
     public int getCharWidth(FontMetrics m)
     {
