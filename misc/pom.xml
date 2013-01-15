@@ -10,7 +10,7 @@
   </parent>
 
   <artifactId>jbundle-misc-reactor</artifactId>
-  <version>0.8.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   
   <packaging>pom</packaging>
   <name>jbundle-misc-reactor - Miscellaneous code parent</name>
