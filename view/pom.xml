@@ -25,7 +25,7 @@
     <dependency>
       <groupId>org.jbundle.config.dep</groupId>
       <artifactId>jbundle-config-dep-main</artifactId>
-      <version>${jbundleVersion}</version>
+      <version>${jbundleVersionRange}</version>
 	  <type>pom</type>
     </dependency>
 
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>org.jbundle.thin.base.screen</groupId>
       <artifactId>org.jbundle.thin.base.screen.cal.other</artifactId>
-      <version>${jbundleVersion}</version>
+      <version>${jbundleVersionRange}</version>
     </dependency>
     
     <dependency>
@@ -51,7 +51,7 @@
     <dependency>
       <groupId>org.jbundle.thin.base.screen</groupId>
       <artifactId>org.jbundle.thin.base.screen.util.misc</artifactId>
-      <version>${jbundleVersion}</version>
+      <version>${jbundleVersionRange}</version>
     </dependency>
 
   </dependencies>
