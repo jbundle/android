@@ -119,7 +119,7 @@ public class ScreenInfo extends Object
      */
     public void setScreenProperties(PropertyOwner propertyOwner, Map<String,Object> properties)
     {
-        m_font = ScreenUtil.getFont(propertyOwner, properties);
+        m_font = ScreenUtil.getFont(propertyOwner, properties, true);
         if (m_font != null)
             usingDefaultFont = false;
         m_colorControl = ScreenUtil.getColor(ScreenUtil.CONTROL_COLOR, propertyOwner, properties);
