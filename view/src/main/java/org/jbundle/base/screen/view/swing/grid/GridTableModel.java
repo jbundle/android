@@ -3,6 +3,7 @@
  */
 package org.jbundle.base.screen.view.swing.grid;
 
+import java.awt.Component;
 import java.io.FileFilter;
 
 import org.jbundle.base.db.DatabaseException;
@@ -20,9 +21,9 @@ import org.jbundle.base.screen.model.ToolScreen;
 import org.jbundle.base.screen.view.swing.VScreenField;
 import org.jbundle.model.DBException;
 import org.jbundle.model.db.Convert;
-import org.jbundle.thin.base.db.Converter;
 import org.jbundle.thin.base.db.FieldList;
 import org.jbundle.thin.base.db.buff.BaseBuffer;
+import org.jbundle.thin.base.screen.BaseApplet;
 import org.jbundle.thin.base.screen.grid.ThinTableModel;
 
 
@@ -365,5 +366,19 @@ public class GridTableModel extends ThinTableModel
             lastConverter = converter;
         }
         return iFieldColumn - iToolscreens;    //Never
+    }
+    /**
+     * Displayed this error code.
+     * @param ex
+     * @param source
+     * @return True if it was a database exception and the error was displayed
+     */
+    public boolean displayError(Exception ex, Component source)
+    {
+        if (source == null)
+            if (m_gridScreen != null)
+                if (m_gridScreen.getAppletScreen() != null)
+                    source = (BaseApplet)m_gridScreen.getAppletScreen().getTask();
+        return super.displayError(ex, source);
     }
 }
