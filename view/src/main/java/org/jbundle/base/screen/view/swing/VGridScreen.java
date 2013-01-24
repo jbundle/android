@@ -40,13 +40,15 @@ import org.jbundle.model.screen.ScreenComponent;
 import org.jbundle.thin.base.db.Constants;
 import org.jbundle.thin.base.db.FieldInfo;
 import org.jbundle.thin.base.screen.AbstractThinTableModel;
+import org.jbundle.thin.base.screen.grid.TraversableGridPolicy;
+import org.jbundle.thin.base.screen.grid.TraversableGrid;
 
 
 /**
  * The window for displaying several records at once.
  */
 public class VGridScreen extends VBaseGridTableScreen
-    implements TableColumnModelListener
+    implements TableColumnModelListener, TraversableGrid
 {
 
     /**
@@ -106,11 +108,23 @@ public class VGridScreen extends VBaseGridTableScreen
         control.setOpaque(false);
         panel.add(scrollpane);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        
+        TraversableGridPolicy.addGridTraversalPolicy(control, this);
 
         control.getColumnModel().addColumnModelListener(this);
-
         return control;
     }
+    /**
+     * Is this control a focus target?
+     */
+    public boolean isFocusTarget(int col)
+    {
+        ScreenField sField = this.getSFieldAtColumn(col);
+        if (sField != null)
+            return sField.isFocusTarget();
+        return false;
+    }
+
     /**
      * Calculate the physical screen size of this control.
      * <p/>For a GridWindow, survey all of the sub-controls and multiply by the rows and columns.
