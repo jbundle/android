@@ -400,7 +400,7 @@ public class SApplet extends BaseApplet
      * The browser back button was pressed (Javascript called me).
      * @param command The command that was popped from the browser history.
      */
-	public void doJavaBrowserBack(String command)
+	public void doBack(String command)
 	{
 		if (command != null)
 			if (command.startsWith("#"))
@@ -443,7 +443,7 @@ public class SApplet extends BaseApplet
      * The browser back button was pressed (Javascript called me).
      * @param command The command that was popped from the browser history.
      */
-	public void doJavaBrowserForward(String command)
+	public void doForward(String command)
 	{
 		if (command != null)
 			if (command.startsWith("#"))
@@ -456,7 +456,7 @@ public class SApplet extends BaseApplet
      * The browser hash value changed (Javascript called me).
      * @param command The command that was popped from the browser history.
      */
-	public void doJavaBrowserHashChange(String command)
+	public void hashChange(String command)
 	{
 		if (command != null)
 			if (command.startsWith("#"))
