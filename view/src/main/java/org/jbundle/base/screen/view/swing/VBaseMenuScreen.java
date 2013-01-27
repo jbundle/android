@@ -28,6 +28,7 @@ import org.jbundle.base.model.DBConstants;
 import org.jbundle.base.model.DBParams;
 import org.jbundle.base.model.HtmlConstants;
 import org.jbundle.base.model.ScreenConstants;
+import org.jbundle.base.model.Utility;
 import org.jbundle.base.screen.model.BaseMenuScreen;
 import org.jbundle.base.screen.model.MenuScreen;
 import org.jbundle.base.screen.model.SMenuButton;
@@ -36,7 +37,10 @@ import org.jbundle.base.screen.model.util.ScreenLocation;
 import org.jbundle.model.DBException;
 import org.jbundle.model.screen.ScreenComponent;
 import org.jbundle.model.util.Util;
+import org.jbundle.thin.base.screen.BaseApplet;
 import org.jbundle.thin.base.screen.JScreenConstants;
+import org.jbundle.thin.base.util.Application;
+import org.jbundle.thin.base.util.ThinMenuConstants;
 
 
 /**
@@ -267,6 +271,12 @@ public class VBaseMenuScreen extends VBaseScreen
                 this.setupGrid(strParam);   // Initial menu
                 return true;
             }
+        }
+        if (Utility.isURL(strCommand))   // Is this a URL (link)?
+        {
+            BaseApplet applet = null;
+            applet = (BaseApplet)this.getScreenField().getParentScreen().getAppletScreen().getTask();
+            return ((Application)this.getTask().getApplication()).showTheDocument(strCommand, applet, ThinMenuConstants.EXTERNAL_LINK);
         }
         return false;
     }
