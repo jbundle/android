@@ -12,6 +12,7 @@
     
     <packaging>apk</packaging>
     <name>Testscreen - thin db client</name>
+    <description>This android application tests the jbundle thin db</description>
 
     <dependencies>
         <dependency>
