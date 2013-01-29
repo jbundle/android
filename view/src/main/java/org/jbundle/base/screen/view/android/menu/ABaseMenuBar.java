@@ -19,6 +19,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
+import javax.swing.text.JTextComponent;
 
 import org.jbundle.base.model.MenuConstants;
 import org.jbundle.base.screen.model.ScreenField;
@@ -27,7 +28,9 @@ import org.jbundle.base.screen.model.menu.SGridMenuBar;
 import org.jbundle.base.screen.model.menu.SMenuBar;
 import org.jbundle.base.screen.view.android.ABasePanel;
 import org.jbundle.model.screen.ScreenComponent;
+import org.jbundle.thin.base.screen.BaseApplet;
 import org.jbundle.thin.base.screen.action.ActionManager;
+import org.jbundle.thin.base.util.Application;
 
 
 
@@ -243,7 +246,23 @@ public class ABaseMenuBar extends ABasePanel
         menuItem.setIcon(this.loadImageIcon(MenuConstants.COPY, null));
         menuItem.setHorizontalTextPosition(JButton.RIGHT);
         menuItem = this.addMenuItem(menu, strMenu = this.getString(MenuConstants.PASTE));
-        menuItem.addActionListener(new javax.swing.text.DefaultEditorKit.PasteAction());
+        menuItem.addActionListener(new javax.swing.text.DefaultEditorKit.PasteAction()
+        {
+            public void actionPerformed(ActionEvent e) {
+System.out.println("in paste " + e);
+                JTextComponent target = getTextComponent(e);
+                Application application = BaseApplet.getSharedInstance().getApplication();
+System.out.println("in paste2 " + application.getMuffinManager());
+                if (application.getMuffinManager() != null)
+                {
+                    Object data = application.getMuffinManager().getClipboardContents();
+                    System.out.println(data);
+                }
+                if (target != null) {
+                    target.paste();
+                }
+            }
+        });
         menuItem.setMnemonic(ActionManager.getFirstChar(strMenu, rgchItemShortcuts, false));
         menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, ActionEvent.CTRL_MASK));
         menuItem.setIcon(this.loadImageIcon(MenuConstants.PASTE, null));

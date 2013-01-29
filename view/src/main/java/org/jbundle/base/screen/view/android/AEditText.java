@@ -25,6 +25,9 @@ import org.jbundle.base.model.ScreenConstants;
 import org.jbundle.base.screen.model.ScreenField;
 import org.jbundle.model.screen.ScreenComponent;
 import org.jbundle.thin.base.db.Constants;
+import org.jbundle.thin.base.screen.BaseApplet;
+import org.jbundle.thin.base.util.Application;
+import org.jbundle.util.muffinmanager.MuffinManager;
 
 
 /**
@@ -93,6 +96,17 @@ public class AEditText extends AScreenField
             control = new JTextField(cols);   //? ScreenConstants.kMaxSingleChars
         else
             control = new JTextField(cols);
+        
+        Application application = (Application)this.getTask().getApplication();
+        MuffinManager muffinManager = application.getMuffinManager();
+        if (muffinManager != null)
+        {
+            if (bEditableControl)
+                muffinManager.replaceClipboardAction(control, "cut");
+            muffinManager.replaceClipboardAction(control, "copy");
+            if (bEditableControl)
+                muffinManager.replaceClipboardAction(control, "paste");
+        }        
 
         if (bEditableControl)
         {
