@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 import org.jbundle.base.model.DBConstants;
 import org.jbundle.base.screen.model.ScreenField;
 import org.jbundle.model.screen.ScreenComponent;
+import org.jbundle.thin.base.util.Application;
+import org.jbundle.util.muffinmanager.MuffinManager;
 
 
 /**
@@ -78,6 +80,17 @@ public class VNumberText extends VEditText
             cols = 40;
         JTextField control = new JTextField(cols);
         control.setHorizontalAlignment(JTextField.RIGHT);
+
+        Application application = (Application)this.getTask().getApplication();
+        MuffinManager muffinManager = application.getMuffinManager();
+        if (muffinManager != null)
+        {
+            if (bEditableControl)
+                muffinManager.replaceClipboardAction(control, "cut");
+            muffinManager.replaceClipboardAction(control, "copy");
+            if (bEditableControl)
+                muffinManager.replaceClipboardAction(control, "paste");
+        }        
 
         if (bEditableControl)
         {

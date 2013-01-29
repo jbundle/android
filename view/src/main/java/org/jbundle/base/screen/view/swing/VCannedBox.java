@@ -13,6 +13,14 @@ import java.awt.Component;
 import java.awt.MediaTracker;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.Date;
 
 import javax.swing.ImageIcon;
@@ -28,6 +36,7 @@ import org.jbundle.base.model.DBConstants;
 import org.jbundle.base.model.RecordOwner;
 import org.jbundle.base.model.ScreenConstants;
 import org.jbundle.base.model.ScreenModel;
+import org.jbundle.base.model.Utility;
 import org.jbundle.base.screen.control.swing.SApplet;
 import org.jbundle.base.screen.model.GridScreen;
 import org.jbundle.base.screen.model.SCannedBox;
@@ -37,6 +46,7 @@ import org.jbundle.model.main.properties.db.PropertiesInputModel;
 import org.jbundle.model.screen.ScreenComponent;
 import org.jbundle.model.util.PortableImage;
 import org.jbundle.thin.base.screen.BaseApplet;
+import org.jbundle.thin.base.util.Application;
 import org.jbundle.util.jcalendarbutton.JCalendarPopup;
 import org.jbundle.util.jcalendarbutton.JTimePopup;
 import org.jbundle.util.osgi.finder.ClassServiceUtility;
@@ -244,18 +254,44 @@ public class VCannedBox extends VButtonBox
      */
     public boolean openFile()
     {
-        JFileChooser chooser = new JFileChooser();
-//+     ExtensionFileFilter filter = new ExtensionFileFilter();
-//+     filter.addExtension("jpg");
-//+     filter.addExtension("gif");
-//+     filter.setDescription("JPG & GIF Images");
-//+     chooser.setFileFilter(filter);
-        BaseApplet parent = (BaseApplet)SApplet.getSharedInstance().getApplet();
-        int returnVal = chooser.showOpenDialog(parent);
-        if(returnVal == JFileChooser.APPROVE_OPTION)
+        ImageIcon imageIcon = null;
+        Application app = (Application)this.getTask().getApplication();
+        if (app.getMuffinManager() != null)
         {
-            String strPath = chooser.getSelectedFile().getPath();
-            ImageIcon imageIcon = new ImageIcon(strPath);
+            InputStream inputStream = app.getMuffinManager().openFileStream(null, null);
+            if (inputStream != null)
+            {
+                Reader in = new BufferedReader(new InputStreamReader(inputStream));
+                ByteArrayOutputStream baout = new ByteArrayOutputStream();
+                Writer out = new OutputStreamWriter(baout);
+                Utility.transferStream(in, out);
+                try {
+                    out.flush();
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                imageIcon = new ImageIcon(baout.toByteArray());
+            }
+        }
+        else
+        {
+            JFileChooser chooser = new JFileChooser();
+    //+     ExtensionFileFilter filter = new ExtensionFileFilter();
+    //+     filter.addExtension("jpg");
+    //+     filter.addExtension("gif");
+    //+     filter.setDescription("JPG & GIF Images");
+    //+     chooser.setFileFilter(filter);
+            BaseApplet parent = (BaseApplet)SApplet.getSharedInstance().getApplet();
+            int returnVal = chooser.showOpenDialog(parent);
+            if(returnVal == JFileChooser.APPROVE_OPTION)
+            {
+                String strPath = chooser.getSelectedFile().getPath();
+                imageIcon = new ImageIcon(strPath);
+            }
+        }
+        if (imageIcon != null)
+        {
             PortableImage data = new PortableImage(imageIcon.getImage());
             int i = 0;
             while (imageIcon.getImageLoadStatus() != MediaTracker.COMPLETE)
@@ -268,7 +304,7 @@ public class VCannedBox extends VButtonBox
                 if (i == 10)
                     return false; // ten sec - too long
             }
-            this.getScreenField().getConverter().setData(data, DBConstants.DISPLAY, DBConstants.SCREEN_MOVE);
+            this.getScreenField().getConverter().setData(data, DBConstants.DISPLAY, DBConstants.SCREEN_MOVE);                
         }
         return true;    // Success
     }
