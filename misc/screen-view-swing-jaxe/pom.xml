@@ -15,14 +15,14 @@
   <name>jbundle-base-screen-view-jaxe</name>
   
   <properties>
-    <jbundlePackage>org.jbundle.base.screen.view.swing.opt.jaxe</jbundlePackage>	<!-- Bundle packages to export -->
+    <jbundle-package>org.jbundle.base.screen.view.swing.opt.jaxe</jbundle-package>	<!-- Bundle packages to export -->
   </properties>  
 
   <dependencies>
 	  <dependency>
 	    <groupId>org.jbundle.base.screen</groupId>
 	    <artifactId>org.jbundle.base.screen.view.swing</artifactId>
-	    <version>${jbundleSwingVersionRange}</version>
+	    <version>${jbundle-swing-version-range}</version>
 	  </dependency>
   
     <!-- **** FIX THIS EXTERNAL DEPENDENCY ***** -->

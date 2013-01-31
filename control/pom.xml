@@ -14,9 +14,9 @@
   <name>jbundle-base-screen-control-swing</name>
 
   <properties>
-    <jbundlePackageExport> <!-- Note: Eventually I need to move screen.control here -->
+    <jbundle-package-export> <!-- Note: Eventually I need to move screen.control here -->
       org.jbundle.base.screen.control.swing.activator.*;version=${project.version},
-    </jbundlePackageExport>
+    </jbundle-package-export>
   </properties>
   
   <build>
@@ -77,16 +77,16 @@
     <dependency>
       <groupId>org.jbundle.base.db</groupId>
       <artifactId>org.jbundle.base.db.client</artifactId>
-      <version>${jbundleVersion}</version>
+      <version>${jbundle-version}</version>
     </dependency>
     <dependency>
       <groupId>org.jbundle.thin.base.screen</groupId>
-      <version>${jbundleVersion}</version>
+      <version>${jbundle-version}</version>
       <artifactId>org.jbundle.thin.base.screen.splash</artifactId>
     </dependency>
     <dependency>
       <groupId>org.jbundle.config.dep</groupId>
-      <version>${jbundleVersion}</version>
+      <version>${jbundle-version}</version>
       <artifactId>jbundle-config-dep-all</artifactId>
       <type>pom</type>
     </dependency>
