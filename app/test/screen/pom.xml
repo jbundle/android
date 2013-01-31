@@ -30,13 +30,13 @@
 
 	<dependency>
 	  <groupId>org.jbundle.app.test</groupId>
-	  <version>${jbundleVersionRange}</version>
+	  <version>${jbundle-version-range}</version>
 	  <artifactId>org.jbundle.app.test.db</artifactId>
 	</dependency>
         <dependency>
           <groupId>org.jbundle.app.test</groupId>
           <artifactId>org.jbundle.res.app.test</artifactId>
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
         </dependency>
       </dependencies>
     <build>

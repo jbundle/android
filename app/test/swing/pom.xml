@@ -14,7 +14,7 @@
   <name>Testscreen - swing client</name>
   <packaging>bundle</packaging>
   <properties>
-    <mainClass>${jbundlePackage}.TestApplet</mainClass>
+    <mainClass>${jbundle-package}.TestApplet</mainClass>
   </properties>
 
   <build>
@@ -54,7 +54,7 @@
 	    <dependency>
 	      <groupId>org.jbundle.config.dep</groupId>
 	      <artifactId>jbundle-config-dep-thin-db</artifactId>
-	      <version>${jbundleVersionRange}</version>
+	      <version>${jbundle-version-range}</version>
 	      <type>pom</type>
 	    </dependency>
 	    
@@ -62,90 +62,90 @@
 	    <dependency>
 	      <groupId>org.jbundle.app.test</groupId>
 	      <artifactId>org.jbundle.app.test.db</artifactId>
-	      <version>${jbundleVersionRange}</version>
+	      <version>${jbundle-version-range}</version>
 	    </dependency>
 	    <dependency>
           <groupId>org.jbundle.base</groupId>
           <artifactId>org.jbundle.base</artifactId>         
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
 	    </dependency>
         <dependency>
           <groupId>org.jbundle.base.db</groupId>
           <artifactId>org.jbundle.base.db.client</artifactId>         
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
         </dependency>
         <dependency>
           <groupId>org.jbundle.base.db</groupId>
           <artifactId>org.jbundle.base.db.net</artifactId>         
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
         </dependency>	    
         <dependency>
           <groupId>org.jbundle.base.db</groupId>
           <artifactId>org.jbundle.base.db.memory</artifactId>         
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
         </dependency>	    
 	    
         <dependency>
           <groupId>org.jbundle.app.test</groupId>
           <artifactId>org.jbundle.thin.app.test</artifactId>
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
         </dependency>
         <dependency>
           <groupId>org.jbundle.app.test</groupId>
           <artifactId>org.jbundle.model.app.test</artifactId>
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
         </dependency>
         
         <dependency>
 		  <groupId>org.jbundle.thin.base.db</groupId>
 		  <artifactId>org.jbundle.thin.base.db</artifactId>
-		  <version>${jbundleVersionRange}</version>
+		  <version>${jbundle-version-range}</version>
         </dependency>
         <dependency>
 		  <groupId>org.jbundle.thin.base</groupId>
 		  <artifactId>org.jbundle.thin.base.remote</artifactId>
-		  <version>${jbundleVersionRange}</version>
+		  <version>${jbundle-version-range}</version>
         </dependency>
         <dependency>
 		  <groupId>org.jbundle.thin.base.db</groupId>
 		  <artifactId>org.jbundle.thin.base.db.misc</artifactId>
-		  <version>${jbundleVersionRange}</version>
+		  <version>${jbundle-version-range}</version>
         </dependency>
         <dependency>
 		  <groupId>org.jbundle.thin.base</groupId>
 		  <artifactId>org.jbundle.thin.base.util</artifactId>
-		  <version>${jbundleVersionRange}</version>
+		  <version>${jbundle-version-range}</version>
         </dependency>
         <dependency>
 		  <groupId>org.jbundle.thin.base</groupId>
 		  <artifactId>org.jbundle.thin.base.util.base64</artifactId>
-		  <version>${jbundleVersionRange}</version>
+		  <version>${jbundle-version-range}</version>
         </dependency>
         <dependency>
 		  <groupId>org.jbundle.thin.base</groupId>
 		  <artifactId>org.jbundle.thin.base.thread</artifactId>
-		  <version>${jbundleVersionRange}</version>
+		  <version>${jbundle-version-range}</version>
         </dependency>
         <dependency>
 		  <groupId>org.jbundle.thin.base</groupId>
 		  <artifactId>org.jbundle.thin.base.message</artifactId>
-		  <version>${jbundleVersionRange}</version>
+		  <version>${jbundle-version-range}</version>
         </dependency>
         
         <dependency>
           <groupId>org.jbundle.res</groupId>
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
           <artifactId>org.jbundle.res</artifactId>
         </dependency>
         <dependency>
           <groupId>org.jbundle.base.message</groupId>
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
           <artifactId>org.jbundle.base.message.core</artifactId>
         </dependency>
         
         <dependency>
           <groupId>org.jbundle.base</groupId>
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
           <artifactId>org.jbundle.base.model</artifactId>
         </dependency>
    </dependencies>

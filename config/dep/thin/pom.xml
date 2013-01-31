@@ -21,7 +21,7 @@
       <dependency>
         <groupId>org.jbundle.config.dep</groupId>
         <artifactId>jbundle-config-dep-thin-db</artifactId>
-        <version>${jbundleVersionRange}</version>
+        <version>${jbundle-version-range}</version>
         <type>pom</type>
       </dependency>
 

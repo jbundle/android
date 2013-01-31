@@ -27,7 +27,7 @@
 	<dependency>
 	  <groupId>org.jbundle</groupId>
 	  <artifactId>org.jbundle.model</artifactId>
-	  <version>${jbundleVersionRange}</version>
+	  <version>${jbundle-version-range}</version>
 	</dependency>
     </dependencies>
 

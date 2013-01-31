@@ -19,12 +19,12 @@
 	<dependency>
             <groupId>org.jbundle.thin.base.db</groupId>
             <artifactId>org.jbundle.thin.base.db</artifactId>
-            <version>${jbundleVersionRange}</version>
+            <version>${jbundle-version-range}</version>
 	</dependency>
 	<dependency>
             <groupId>org.jbundle.thin.base.db</groupId>
             <artifactId>org.jbundle.thin.base.db.misc</artifactId>
-            <version>${jbundleVersionRange}</version>
+            <version>${jbundle-version-range}</version>
 	</dependency>
     </dependencies>
     <build>

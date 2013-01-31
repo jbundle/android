@@ -23,7 +23,7 @@
     <dependency>
       <groupId>org.jbundle.base.screen</groupId>
       <artifactId>org.jbundle.base.screen.model</artifactId>
-      <version>${jbundleVersionRange}</version>
+      <version>${jbundle-version-range}</version>
     </dependency>
 
   </dependencies>

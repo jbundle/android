@@ -22,18 +22,18 @@
       <dependency>
           <groupId>org.jbundle.base</groupId>
           <artifactId>org.jbundle.base</artifactId>         
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
       </dependency>
         <dependency>
           <groupId>org.jbundle.base.db</groupId>
           <artifactId>org.jbundle.base.db.client</artifactId>         
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
         </dependency>
         
         <dependency>
           <groupId>org.jbundle.res</groupId>
           <artifactId>org.jbundle.res</artifactId>
-          <version>${jbundleVersionRange}</version>
+          <version>${jbundle-version-range}</version>
         </dependency>
       </dependencies>
 
