@@ -8,14 +8,18 @@
     <version>1.3.0</version>
     <relativePath>../../jbundle-parent</relativePath>
   </parent>
-  
-    <groupId>org.jbundle.base.screen</groupId>
-    <artifactId>jbundle-view-swing-reactor</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
 
-    <packaging>pom</packaging>
-    <name>jbundle-view-swing-reactor</name>
-  
+  <groupId>org.jbundle.base.screen</groupId>
+  <artifactId>jbundle-view-swing-reactor</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <packaging>pom</packaging>
+  <name>jbundle-view-swing-reactor</name>
+
+  <properties>
+    <projectName>jbundle-swing</projectName>
+  </properties>
+
   <modules>
     <module>view</module>
     <module>control</module>
