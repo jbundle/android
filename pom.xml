@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.jbundle.config</groupId>
     <artifactId>jbundle-parent</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1-SNAPSHOT</version>
     <relativePath>../../jbundle-parent</relativePath>
   </parent>
 
@@ -17,7 +17,7 @@
   <name>jbundle-view-swing-reactor</name>
 
   <properties>
-    <projectName>jbundle-swing</projectName>
+    <projectName>jbundle-view-swing</projectName>
   </properties>
 
   <modules>
