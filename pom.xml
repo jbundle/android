@@ -20,25 +20,17 @@
     <projectName>jbundle-view-android</projectName>
   </properties>
 
+  <scm>
+    <url>https://github.com/jbundle/android</url>
+    <connection>scm:git:git://github.com/jbundle/android</connection>
+    <developerConnection>scm:git:git@github.com:jbundle/android</developerConnection>
+  </scm>
+
   <modules>
     <module>view</module>
     <module>config</module>
     <module>app</module>
     <module>thin/base/screen</module>
   </modules>
-
-  <repositories>
-    <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 
 </project>
