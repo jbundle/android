@@ -20,23 +20,15 @@
     <projectName>jbundle-view-swing</projectName>
   </properties>
 
+  <scm>
+    <url>https://github.com/jbundle/swing</url>
+    <connection>scm:git:git://github.com/jbundle/swing</connection>
+    <developerConnection>scm:git:git@github.com:jbundle/swing</developerConnection>
+  </scm>
+
   <modules>
     <module>view</module>
     <module>control</module>
   </modules>
-
-  <repositories>
-    <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 
 </project>
