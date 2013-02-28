@@ -29,7 +29,6 @@
   <modules>
     <module>view</module>
     <module>control</module>
-    <module>main</module>
   </modules>
 
 </project>
