@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.jbundle.base.screen</groupId>
     <artifactId>jbundle-view-swing-reactor</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>org.jbundle.config.main</artifactId>
