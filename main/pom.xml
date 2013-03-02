@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.jbundle.base.screen</groupId>
     <artifactId>jbundle-view-swing-reactor</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>org.jbundle.config.main</artifactId>
@@ -55,10 +55,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.jbundle.config.dep</groupId>
-      <artifactId>jbundle-config-dep-all</artifactId>
-      <version>${jbundle-version-range}</version>
-      <type>pom</type>
+      <groupId>org.jbundle.base.screen</groupId>
+      <artifactId>org.jbundle.base.screen.view.swing</artifactId>
+      <version>1.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
